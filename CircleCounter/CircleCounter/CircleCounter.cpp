@@ -3,6 +3,11 @@
 #include "Circle.cpp"
 using namespace std;
 
+/// <summary>
+/// Convert Input String To Double, or if he don't can convert, return 0;
+/// </summary>
+/// <param name="inputString">String For Convert</param>
+/// <returns></returns>
 double InputToDouble(string inputString)
 {
     try {
@@ -13,35 +18,45 @@ double InputToDouble(string inputString)
         double convertedValue;
         converter >> convertedValue;
 
-
         return convertedValue;
     }
-    catch (exception ex) { return stod(inputString); }
+    catch (exception ex) 
+    { 
+        try 
+        { 
+            return stod(inputString); 
+        } 
+        catch (exception ex)
+        { 
+            return 0; 
+        }
+    }
 }
+
 
 void GetObjectProgrammingAlghorytm()
 {
     string inputString;
 
-    std::cout << "OBJECT Programming" << std::endl;
+    cout << "OBJECT Programming" << std::endl;
 
     double radius;
     double arcAngle;
 
     Circle newCircle;
 
-    std::cout << "Enter Radius: ";
-    std::cin >> inputString;
+    cout << "Enter Radius: ";
+    cin >> inputString;
     radius = InputToDouble(inputString);
 
-    std::cout << "Enter Angle: ";
-    std::cin >> inputString;
+    cout << "Enter Angle: ";
+    cin >> inputString;
     arcAngle = InputToDouble(inputString);
 
     newCircle = Circle(radius);
 
-    std::cout << "Square = " << newCircle.GetSquare(arcAngle) << std::endl;
-    std::cout << "Arc Length = " << newCircle.GetSquare(arcAngle) << std::endl;
+    cout << "Square = " << newCircle.GetSquare(arcAngle) << endl;
+    cout << "Arc Length = " << newCircle.GetSquare(arcAngle) << endl;
 
     return;
 };
@@ -50,19 +65,19 @@ void GetProceduralProgrammingAlghorytm()
 {
     string inputString;
 
-    std::cout << "Procedural Programming" << std::endl;
+    cout << "Procedural Programming" << std::endl;
     double radius, arcAngle;
 
-    std::cout << "Enter Radius: ";
-    std::cin >> inputString;
+    cout << "Enter Radius: ";
+    cin >> inputString;
     radius = InputToDouble(inputString);
 
-    std::cout << "Enter Angle: ";
-    std::cin >> inputString;
+    cout << "Enter Angle: ";
+    cin >> inputString;
     arcAngle = InputToDouble(inputString);
 
-    std::cout << "Square = " << (((M_PI * radius) / 180) * arcAngle) << std::endl;
-    std::cout << "Arc Length = " << (M_PI * pow(radius, 2) * arcAngle) / 360 << std::endl;
+    cout << "Square = " << (((M_PI * radius) / 180) * arcAngle) << endl;
+    cout << "Arc Length = " << (M_PI * pow(radius, 2) * arcAngle) / 360 << endl;
 
     return;
 };
