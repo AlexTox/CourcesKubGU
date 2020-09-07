@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <cstdlib>
 #include "Circle.cpp"
 using namespace std;
 
@@ -86,5 +87,6 @@ void GetProceduralProgrammingAlghorytm()
 int main()
 {
     GetObjectProgrammingAlghorytm();
+    system("PAUSE");
     return 0;
 }
